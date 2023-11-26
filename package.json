@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/paveen2061985/react#readme",
   "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.10.3",
     "process": "^0.11.10"
   },

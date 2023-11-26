@@ -18,13 +18,16 @@ const title = (
 // Class based component and functional components - NEW - Uses javascript functions
 // React functional Component is just a javascript function
 // Component composition
-const HeadingComponent = () => (
-    <div id="container">
-        <Title />
-        {title}
-        <h1 className="heading">It is React Functional Component 🚀</h1>
-    </div>
-);
+const HeadingComponent = () => {
+    return (
+        <div id="container">
+            <Title />
+            {title}
+            <h1 className="heading">It is React Functional Component 🚀</h1>
+        </div>
+    );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<HeadingComponent />);
