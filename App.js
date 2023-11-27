@@ -1185,9 +1185,7 @@ const restaurentList = [
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
       }
 ];
-const RestaurentCard = ({restaurent}) => {
-    console.log(restaurent)
-    const {cloudinaryImageId, name, cuisines, avgRatingString, sla} = restaurent.info;
+const RestaurentCard = ({cloudinaryImageId, name, cuisines, avgRatingString, sla }) => {
     return (
         <div className="card">
             <img src= { 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_200/' + cloudinaryImageId } alt="recipie pic"/>
@@ -1199,20 +1197,28 @@ const RestaurentCard = ({restaurent}) => {
     )
 }
 
+ // no key < index key < unique key
 const Body = () => {
-    return (
+    return (<div className="restaurent-list">
+    {
+        restaurentList.map((restaurent) => {
+            return <RestaurentCard {...restaurent.info} key={restaurent.info.id}/>
+        }) 
+    }
+    </div>)
+    /* return (
         <div className="restaurent-list">
-            <RestaurentCard restaurent= {restaurentList[0]} />
-            <RestaurentCard restaurent= {restaurentList[1]} />
-            <RestaurentCard restaurent= {restaurentList[2]} />
-            <RestaurentCard restaurent= {restaurentList[3]} />
-            <RestaurentCard restaurent= {restaurentList[4]} />
-            <RestaurentCard restaurent= {restaurentList[5]} />
-            <RestaurentCard restaurent= {restaurentList[6]} />
-            <RestaurentCard restaurent= {restaurentList[7]} />
-            <RestaurentCard restaurent= {restaurentList[8]} />
+            <RestaurentCard {...restaurentList[0].info} />
+            <RestaurentCard {...restaurentList[1].info} />
+            <RestaurentCard {...restaurentList[2].info} />
+            <RestaurentCard {...restaurentList[3].info} />
+            <RestaurentCard {...restaurentList[4].info} />
+            <RestaurentCard {...restaurentList[5].info} />
+            <RestaurentCard {...restaurentList[6].info} />
+            <RestaurentCard {...restaurentList[7].info} />
+            <RestaurentCard {...restaurentList[8].info} />
         </div>
-    );
+    ); */
 }
 
 const Footer = () => {
