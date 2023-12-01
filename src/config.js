@@ -1,29 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-const Title = () => (
-        <img className="logo" src="https://lh3.googleusercontent.com/p/AF1QipMf9w4RomHXrUkQKvrxtPdjp3SLadP05HDzXlH2=w1080-h608-p-no-v0" alt="logo"/>
-);
-
-
-const Header = () => {
-    return (
-        <div className="header">
-            <Title />
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-}
-
-const restaurentList = [
+export const TITLE_IMG_URL = 'https://lh3.googleusercontent.com/p/AF1QipMf9w4RomHXrUkQKvrxtPdjp3SLadP05HDzXlH2=w1080-h608-p-no-v0';
+export const IMG_CDN_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_200/';
+export const restaurentList = [
     {
         "info": {
           "id": "56096",
@@ -1184,67 +1161,4 @@ const restaurentList = [
         },
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
       }
-];
-const RestaurentCard = ({cloudinaryImageId, name, cuisines, avgRatingString, sla }) => {
-    return (
-        <div className="card">
-            <img src= { 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_200/' + cloudinaryImageId } alt="recipie pic"/>
-            <h2>{name}</h2>
-            <h4>{cuisines.join(', ')}</h4>
-            <h6>{avgRatingString} stars</h6>
-            <h6>{sla.lastMileTravelString}</h6>
-        </div>
-    )
-}
-
- // no key < index key < unique key
-const Body = () => {
-    return (<div className="restaurent-list">
-    {
-        restaurentList.map((restaurent) => {
-            return <RestaurentCard {...restaurent.info} key={restaurent.info.id}/>
-        }) 
-    }
-    </div>)
-    /* return (
-        <div className="restaurent-list">
-            <RestaurentCard {...restaurentList[0].info} />
-            <RestaurentCard {...restaurentList[1].info} />
-            <RestaurentCard {...restaurentList[2].info} />
-            <RestaurentCard {...restaurentList[3].info} />
-            <RestaurentCard {...restaurentList[4].info} />
-            <RestaurentCard {...restaurentList[5].info} />
-            <RestaurentCard {...restaurentList[6].info} />
-            <RestaurentCard {...restaurentList[7].info} />
-            <RestaurentCard {...restaurentList[8].info} />
-        </div>
-    ); */
-}
-
-const Footer = () => {
-    return (
-        <h4>Footer</h4>
-    );
-}
-
-// React.Fragment - It is compoenent, which exported by React library
-// JSX has only one parent.
-const AppLayoutComponent = () => {
-    return (
-        // <React.Fragment>
-        /* <div style={{color: 'red'}}>
-            <Header />
-            <Body />
-            <Footer />
-        </div> */
-        <>
-            <Header />
-            <Body />
-            <Footer />
-        </>
-        //<React.Fragment>
-    );
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayoutComponent />);
+  ];
